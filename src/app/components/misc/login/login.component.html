@@ -1,6 +1,6 @@
 <div class="row justify-content-md-center mb-3">
   <div class="col-4">
-    <img src="assets/img/logo.png" class="app-logo mx-auto d-block">
+    <!-- <img src="assets/img/logo.png" class="app-logo mx-auto d-block"> -->
   </div>
 </div>
 
@@ -14,7 +14,7 @@
         <input type="email" class="form-control" [ngClass]="{ 'is-invalid': apiError || email.errors && email.touched }"
           placeholder="Email" name="email" [(ngModel)]="user.email" #email="ngModel" required email>
         <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.required">
-          Please chose an email.
+          Please choose an email.
         </div>
         <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
           Please enter valid email.

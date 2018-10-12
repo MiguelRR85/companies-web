@@ -11,11 +11,11 @@ import { RegisterComponent } from './components/misc/register/register.component
 import { LoginComponent } from './components/misc/login/login.component';
 
 const routes: Routes = [
-{path:'users', component:UserListComponent},
-{path:'home', component:HomeComponent},
-{path:'empresas', component:EmpresasComponent},
-{path:'sectores', component:SectoresComponent},
-{path:'perfil', component:PerfilComponent},
+{ path: 'users', component:UserListComponent},
+{ path: 'home', component:HomeComponent},
+{ path: 'empresas', component:EmpresasComponent},
+{ path: 'sectores', component:SectoresComponent},
+{ path: 'perfil', component:PerfilComponent},
 { path: 'login', component: LoginComponent },
 { path: 'register', component: RegisterComponent }
 ];

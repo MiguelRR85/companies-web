@@ -1,6 +1,6 @@
 <div class="row justify-content-md-center mb-3">
   <div class="col-4">
-    <img src="assets/img/logo.png" class="app-logo mx-auto d-block">
+    <!-- <img src="assets/img/logo.png" class="app-logo mx-auto d-block"> -->
   </div>
 </div>
 
@@ -14,7 +14,7 @@
         <input type="email" class="form-control" [ngClass]="{ 'is-invalid': apiError || email.errors && email.touched }"
           placeholder="Email" name="email" [(ngModel)]="user.email" #email="ngModel" required email>
         <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.required">
-          Please chose an email.
+          Please choose an email.
         </div>
         <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
           Please enter valid email.
@@ -33,6 +33,19 @@
           {{ apiError.message }}
         </div>
       </div>
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" [ngClass]="{ 'is-invalid': apiError || name.errors && name.touched }"
+            placeholder="Name" name="name" [(ngModel)]="user.name" #name="ngModel" required name>
+          <div class="invalid-feedback" *ngIf="name.errors && name.touched && name.errors.required">
+            Please enter a name.
+          </div>
+          <div class="invalid-feedback" *ngIf="name.errors && name.touched && name.errors.name">
+            Please enter a valid name.
+          </div>
+        </div>
       <div class="form-actions">
         <button type="submit" class="btn btn-primary btn-block" [disabled]="!registerForm.valid">Register</button>
       </div>
