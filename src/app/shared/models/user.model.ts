@@ -7,5 +7,6 @@ export class User {
     name: string;
     image: string;
     company: string;
+    createdAt?: Date;
      
 }
