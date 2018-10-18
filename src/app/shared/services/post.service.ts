@@ -13,7 +13,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 export class PostService extends BaseApiService {
 
   private static readonly POST_API = `${BaseApiService.BASE_API}/posts`;
-
+  private static readonly COMPANY_API = `${BaseApiService.BASE_API}/companies`;
   private posts: Array <Post> = [];
   private postsSubject: Subject <Array <Post>> = new Subject();
 
@@ -34,8 +34,6 @@ export class PostService extends BaseApiService {
       );
   }
 
-
-
   create(companyId: string, post: Post): Observable < Post | ApiError > {
     console.info(companyId);
     return this.http.post<Post>(`${PostService.POST_API}/${companyId}`, post,  BaseApiService.defaultOptions)
@@ -49,6 +47,13 @@ export class PostService extends BaseApiService {
         catchError(this.handleError));
   }  
   
+  get(postId: string, companyId: string): Observable<Post | ApiError> {
+    return this.http.get<Post>(`${PostService.POST_API}/${postId}/company/${companyId}`, BaseApiService.defaultOptions)
+      .pipe(
+        map((post: Post) => Object.assign(new Post(), post)),
+        catchError(this.handleError));
+  }
+
   onPostsChanges(): Observable < Array < Post >> {
     return this.postsSubject.asObservable();
   }
