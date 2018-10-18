@@ -18,6 +18,15 @@ import { UserItemComponent } from './components/users/user-item/user-item.compon
 import { UserFinderComponent } from './components/users/user-finder/user-finder.component';
 import { UserFilterPipe } from './shared/pipes/user-filter.pipe';
 import { IntroPipe } from './shared/pipes/intro.pipe';
+import { RegisterCompaniesComponent } from './components/misc/register-companies/register-companies.component';
+import { CompaniesFinderComponent } from './components/companies/companies-finder/companies-finder.component';
+import { CompaniesItemComponent } from './components/companies/companies-item/companies-item.component';
+import { CompaniesListComponent } from './components/companies/companies-list/companies-list.component';
+import { PostCreateComponent } from './components/posts/post-create/post-create.component';
+import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
+import { PostFormComponent } from './components/posts/post-form/post-form.component';
+import { PostItemComponent } from './components/posts/post-item/post-item.component';
+import { PostListComponent } from './components/posts/post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +42,16 @@ import { IntroPipe } from './shared/pipes/intro.pipe';
     UserItemComponent,
     UserFinderComponent, 
     UserFilterPipe,
-    IntroPipe
+    IntroPipe,
+    RegisterCompaniesComponent,
+    CompaniesFinderComponent,
+    CompaniesItemComponent,
+    CompaniesListComponent,
+    PostCreateComponent,
+    PostDetailsComponent,
+    PostFormComponent,
+    PostItemComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,

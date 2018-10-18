@@ -1,0 +1,17 @@
+<div class="card bg-light">
+    <!-- <img class="card-img-top" [src]="company.avatar"> -->
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ company.logo }}
+        <br>
+        {{ company.name }}
+        <br>
+        {{ company.description }}
+        <!-- <button type="button" class="btn btn-link"><i class="fa fa-times text-danger"></i></button> -->
+      </li>
+    </ul>
+    <div class="card-body">
+        <a [routerLink]="['/companies', company._id]" class="btn btn-dark btn-block">View company</a>
+      <!-- <a [routerLink]="['/users', user.id, 'posts']" class="btn btn-dark btn-block">View Posts</a> -->
+    </div>
+  </div>

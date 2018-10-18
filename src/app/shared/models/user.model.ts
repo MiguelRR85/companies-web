@@ -5,8 +5,8 @@ export class User {
     email: string;
     password: string;
     name: string;
-    image: string;
-    company: string;
+    image?: string;
+    company?: string;
     createdAt?: Date;
      
 }

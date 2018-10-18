@@ -1,0 +1,54 @@
+<div class="row justify-content-md-center mb-3">
+    <div class="col-4">
+      <!-- <img src="assets/img/logo.png" class="app-logo mx-auto d-block"> -->
+    </div>
+  </div>
+  
+  <div class="row justify-content-md-center">
+    <div class="col-4">
+      <form (ngSubmit)="onSubmitRegister(registerForm)" #registerForm="ngForm">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" [ngClass]="{ 'is-invalid': apiError || name.errors && name.touched }"
+            placeholder="Name" name="name" [(ngModel)]="company.name" #name="ngModel" required />
+          <div class="invalid-feedback" *ngIf="name.errors && name.touched && name.errors.required">
+            Please select a name
+          </div>
+          <!-- <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
+            Please enter valid email.
+          </div> -->
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" [ngClass]="{ 'is-invalid': apiError || description.errors && description.touched }"
+              placeholder="Description" name="description" [(ngModel)]="company.description" #description="ngModel" required />
+            <div class="invalid-feedback" *ngIf="description.errors && description.touched && description.errors.required">
+              Please write a description
+            </div>
+            <!-- <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
+              Please enter valid email.
+            </div> -->
+          </div>
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+              </div>
+              <input type="text" class="form-control" [ngClass]="{ 'is-invalid': apiError || logo.errors && logo.touched }"
+                placeholder="Logo" name="logo" [(ngModel)]="company.logo" #logo="ngModel" required />
+              <div class="invalid-feedback" *ngIf="logo.errors && logo.touched && logo.errors.required">
+                Please select a image
+              </div>
+              <!-- <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
+                Please enter valid email.
+              </div> -->
+          </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!registerForm.valid">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>

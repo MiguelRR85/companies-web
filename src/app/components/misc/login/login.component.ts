@@ -21,7 +21,7 @@ export class LoginComponent {
         .subscribe(
           () => {
             loginForm.reset();
-            this.router.navigate(['/users']);
+            this.router.navigate(['/home']);
           },
           (error: ApiError) => this.apiError = error
         );

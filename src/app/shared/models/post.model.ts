@@ -1,9 +1,17 @@
 export class Post {
+  
+  title: string;
+  content: string;
+  userId: string;
+  companyId: string;
+  createdAt?: Date;
 
-    title: string;
-    post: string;
-    userId: string;
-    companyId: string;
-    date: Date;
+  // public asFormData(): FormData {
+  //   const data = new FormData();
 
+  //   data.append('name', this.title);
+  //   data.append('content', this.content);
+
+  //   return data;
+  // }
 }

@@ -11,6 +11,7 @@ import { switchMap } from 'rxjs/operators';
   templateUrl: './user-item.component.html',
   styleUrls: ['./user-item.component.css']
 })
+
 export class UserItemComponent implements OnInit, OnDestroy {
   @Input() user: User = new User();
   authUser: User = new User();

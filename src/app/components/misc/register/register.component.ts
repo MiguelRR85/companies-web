@@ -22,14 +22,8 @@ export class RegisterComponent {
       this.userService.create(this.user)
         .subscribe(
           () => {
-            this.sessionService.authenticate(this.user)
-          },
-          (error: ApiError) => this.apiError = error
-        );
-        this.sessionService.authenticate(this.user)
-        .subscribe(
-          () => {
-            this.router.navigate(['/home']);
+            this.sessionService.authenticate(this.user);
+            this.router.navigate(['/login']);
           },
           (error: ApiError) => this.apiError = error
         );

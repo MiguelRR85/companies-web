@@ -1,12 +1,10 @@
 export class Company {
 
-    companyName: string;
-    email: string;
-    password: string;
-    userId: string;
+    _id: string;
+    name: string;
     logo: string;
-    work: string;
-    suscriptors: Array<string>;
-    date: Date;
-
+    description: string;
+    userId: string;
+    suscriptors?: Array<string>;
+    
 }
