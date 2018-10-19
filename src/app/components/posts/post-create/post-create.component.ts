@@ -20,14 +20,11 @@ export class PostCreateComponent implements OnInit {
 
   
   ngOnInit() {
-
-    //  this.routes.params.subscribe(params => this.companyId = params.id);
-     
+    //  this.routes.params.subscribe(params => this.companyId = params.id);   
+    this.companyId = this.routes.snapshot.paramMap.get('companyId');
   }
 
-
   onSubmitCreatePostForm(post: Post): void {
-    this.companyId = this.routes.snapshot.paramMap.get('companyId');
     this.postService.create(this.companyId, post)
       .subscribe((post: Post) => {
         this.postFormComponent.reset();

@@ -27,6 +27,10 @@ import { PostDetailsComponent } from './components/posts/post-details/post-detai
 import { PostFormComponent } from './components/posts/post-form/post-form.component';
 import { PostItemComponent } from './components/posts/post-item/post-item.component';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
+import { CommentFormComponent } from './components/comments/comment-form/comment-form.component';
+import { CommentListComponent } from './components/comments/comment-list/comment-list.component';
+import { CommentItemComponent } from './components/comments/comment-item/comment-item.component';
+import { CommentCreateComponent } from './components/comments/comment-create/comment-create.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,11 @@ import { PostListComponent } from './components/posts/post-list/post-list.compon
     PostDetailsComponent,
     PostFormComponent,
     PostItemComponent,
-    PostListComponent
+    PostListComponent,
+    CommentFormComponent,
+    CommentListComponent,
+    CommentItemComponent,
+    CommentCreateComponent
   ],
   imports: [
     BrowserModule,

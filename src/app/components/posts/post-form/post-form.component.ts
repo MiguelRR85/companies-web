@@ -18,6 +18,7 @@ export class PostFormComponent {
 
   onSubmitPostForm(): void {
     if (this.postForm.valid) {
+      console.log("BBBBBBBBBBBBBBBBBBBBBBB", this.post);
       this.postSubmit.emit(this.post);
     }
   }

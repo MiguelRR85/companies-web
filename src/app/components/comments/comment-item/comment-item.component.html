@@ -1,0 +1,10 @@
+<div class="card mb-2">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{ comment.content | intro }}</p>
+      <footer class="blockquote-footer">
+        {{ comment.createdAt | date:'dd-MM-yyy'}}
+      </footer>
+    </blockquote>
+  </div>
+</div>

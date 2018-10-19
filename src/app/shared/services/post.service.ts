@@ -35,7 +35,6 @@ export class PostService extends BaseApiService {
   }
 
   create(companyId: string, post: Post): Observable < Post | ApiError > {
-    console.info(companyId);
     return this.http.post<Post>(`${PostService.POST_API}/${companyId}`, post,  BaseApiService.defaultOptions)
       .pipe(
         map((post: Post) => {

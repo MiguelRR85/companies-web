@@ -1,0 +1,19 @@
+<div class="row mb-5">
+  <div class="col-12">
+    <form (ngSubmit)="onSubmitCommentForm()" #commentForm="ngForm">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-edit"></i></span>
+          </div>
+          <textarea type="text" class="form-control" [ngClass]="{'is-invalid': content.touched && content.errors}" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            name="content" [(ngModel)]="comment.content" #content="ngModel" required></textarea>
+          <div class="invalid-feedback" *ngIf="content.errors && content.touched && content.errors.required">
+            Please enter content.
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!commentForm.valid">Send</button>
+        </div>
+    </form>
+  </div>
+</div>

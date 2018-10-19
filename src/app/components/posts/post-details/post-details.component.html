@@ -1,10 +1,17 @@
+<div class="card mb-2">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+        <footer class="blockquote-footer">
+            <p><small>{{ post.userEmail }} - {{ post.createdAt | date:'yyyy-MM-dd' }}</small></p>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  
+<app-comment-list> </app-comment-list>
 
-<h1>{{ post.title }}</h1>
-
-<p>{{ post.content }}</p>
-
-<!-- <p><small> by {{ post.user.email }} with ❤️</small></p> -->
-<p><small>{{ post.userEmail }} - {{ post.createdAt | date:'yyyy-MM-dd' }}</small></p>
 <div class="row mt-5">
     <div class="col-12">
         <a [routerLink]="['/companies', post.companyId]" class="badge badge-light"> <i class="fa fa-arrow-left"></i> Back to forum</a>
