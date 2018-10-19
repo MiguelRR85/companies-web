@@ -33,7 +33,8 @@ export class UserService extends BaseApiService {
   }
 
   create(user: User): Observable<User | ApiError> {
-    return this.http.post<User>(UserService.USER_API, user, BaseApiService.defaultOptions)
+    console.log("Probandoooooooooooo =>",user.asFormData())
+    return this.http.post<User>(UserService.USER_API, user.asFormData(), { withCredentials: true })
       .pipe(
         map((user: User) => Object.assign(new User(), user)),
         catchError(this.handleError));

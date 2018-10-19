@@ -16,9 +16,7 @@
         <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.required">
           Please chose an email.
         </div>
-        <!-- <div class="invalid-feedback" *ngIf="email.errors && email.touched && email.errors.email">
-          Please enter valid email.
-        </div> -->
+        
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -45,9 +43,23 @@
             Please enter a name.
             {{ name.errors | json }}
           </div>
-          <!-- <div class="invalid-feedback" *ngIf="name.errors && name.touched && name.errors.name">
-            Please enter valid name.
-          </div> -->
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-file-o"></i></span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" #userFile required (change)="onChangeImageFile(userFile)" >
+            <label class="custom-file-label">{{ comment.avatarFile.name || 'Choose files' }}</label>
+          </div>
+          <div class="invalid-feedback" *ngIf="userFile.errors && userFile.errors.required">
+            Please chose file.
+          </div>
+        </div>
+        <div class="row mt-3 mb-3">
+          <div class="col-3" >
+            <img class="card-img-top img-thumbnail" [src]="previewImage" (error)="onImgPreviewError(avatar)" #avatar>
+          </div>
         </div>
       <div class="form-actions">
         <button type="submit" class="btn btn-primary btn-block" [disabled]="!registerForm.valid">Register</button>

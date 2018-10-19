@@ -5,8 +5,20 @@ export class User {
     email: string;
     password: string;
     name: string;
-    image?: string;
+    avatar?: string;
     company?: string;
     createdAt?: Date;
+    avatarFile?: File;
      
+    public asFormData(): FormData {
+
+        const data = new FormData();
+    
+        data.append('email', this.email);
+        data.append('password', this.password);
+        data.append('name', this.name);
+        data.append('avatar', this.avatarFile);
+    
+        return data;
+      }
 }
